@@ -1,1 +1,0 @@
-[32mINFO    [0m test_signIn_mobile:test_E2E.py:27 Testcase: Sign in with Mobile number
