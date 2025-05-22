@@ -1,0 +1,1 @@
+[32mINFO    [0m test_signIn_tos:test_E2E.py:47 Testcase: User clicks on Terms and Conditions link in SignIn page

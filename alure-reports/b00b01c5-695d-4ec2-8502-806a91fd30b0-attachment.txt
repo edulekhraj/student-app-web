@@ -1,0 +1,4 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_learn_embibe_explainers:test_E2E.py:215 Test case: Playing Videos present in the Embibe Explainers Carousel
+[32mINFO    [0m test_learn_embibe_explainers:test_E2E.py:216 Test case: Playing Video present in the More Topics carousel present in Embibe Explainers details Page
+[32mINFO    [0m test_learn_embibe_explainers:test_E2E.py:218 Test case: Playing Video present in the Related Videos carousel present in Embibe Explainers details Page

@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_click_each_module_Tab_is_navigating_to_its_module:test_E2E.py:82 Testcase: User is redirected to relevant screen on clicking on Learn/Practice/Test/Achieve/UserHome Tab

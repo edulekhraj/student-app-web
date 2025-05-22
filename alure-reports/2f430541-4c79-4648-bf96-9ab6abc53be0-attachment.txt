@@ -1,0 +1,27 @@
+Message: element click intercepted: Element <div style="margin-bottom: 2%; width: 100%;">...</div> is not clickable at point (520, 631). Other element would receive the click: <div class="sc-lkuliq cQzees left-side-buttons">...</div>
+  (Session info: MicrosoftEdge=117.0.2045.35)
+Stacktrace:
+0   msedgedriver                        0x0000000102a77a10 msedgedriver + 4160016
+1   msedgedriver                        0x0000000102a6fad0 msedgedriver + 4127440
+2   msedgedriver                        0x00000001026b9338 msedgedriver + 234296
+3   msedgedriver                        0x00000001026f5474 msedgedriver + 480372
+4   msedgedriver                        0x00000001026f41c4 msedgedriver + 475588
+5   msedgedriver                        0x00000001026f2a70 msedgedriver + 469616
+6   msedgedriver                        0x00000001026f22ec msedgedriver + 467692
+7   msedgedriver                        0x00000001026ea7e0 msedgedriver + 436192
+8   msedgedriver                        0x00000001026ea250 msedgedriver + 434768
+9   msedgedriver                        0x000000010271d650 msedgedriver + 644688
+10  msedgedriver                        0x00000001026e8d04 msedgedriver + 429316
+11  msedgedriver                        0x00000001026e9bb8 msedgedriver + 433080
+12  msedgedriver                        0x0000000102a46070 msedgedriver + 3956848
+13  msedgedriver                        0x0000000102a496cc msedgedriver + 3970764
+14  msedgedriver                        0x0000000102a491bc msedgedriver + 3969468
+15  msedgedriver                        0x0000000102a4e500 msedgedriver + 3990784
+16  msedgedriver                        0x0000000102a49d7c msedgedriver + 3972476
+17  msedgedriver                        0x0000000102a2c61c msedgedriver + 3851804
+18  msedgedriver                        0x0000000102a6147c msedgedriver + 4068476
+19  msedgedriver                        0x0000000102a615a8 msedgedriver + 4068776
+20  msedgedriver                        0x0000000102a6ed5c msedgedriver + 4123996
+21  libsystem_pthread.dylib             0x000000018b0fef94 _pthread_start + 136
+22  libsystem_pthread.dylib             0x000000018b0f9d34 thread_start + 8
+

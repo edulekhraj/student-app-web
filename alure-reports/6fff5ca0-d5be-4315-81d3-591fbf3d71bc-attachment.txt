@@ -1,0 +1,6 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_learn_chapter:test_E2E.py:228 Test case: Playing Video in the Continue Learning Carousel
+[32mINFO    [0m test_learn_chapter:test_E2E.py:229 Test case: Playing Video present in the All Videos carousel present in Learn Chapter Summary Page
+[32mINFO    [0m test_learn_chapter:test_E2E.py:230 Test case: Playing Video present in the Topic Videos carousel present in Learn Chapter Summary Page
+[32mINFO    [0m test_learn_chapter:test_E2E.py:231 Test case: Displaying Points to Remember  in Learn Chapter Summary Page
+[32mINFO    [0m test_learn_chapter:test_E2E.py:232 Test case: Playing Video present in the Prerequisite  carousel present in Learn Chapter Summary Page

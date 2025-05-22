@@ -1,0 +1,1 @@
+[32mINFO    [0m test_signIn_privacy_policy:test_E2E.py:55 Testcase: User clicks on Privacy Policy link in SignIn page

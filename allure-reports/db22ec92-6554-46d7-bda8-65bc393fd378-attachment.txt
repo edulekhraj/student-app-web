@@ -1,0 +1,20 @@
+Message: invalid argument: invalid locator
+  (Session info: chrome=136.0.7103.93)
+Stacktrace:
+0   chromedriver                        0x00000001005fc3bc cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x00000001005f4684 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x0000000100131fbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x0000000100178a28 cxxbridge1$string$len + 379528
+4   chromedriver                        0x00000001001ba044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x000000010016d3f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x00000001005c07e0 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x00000001005c3ab0 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x00000001005a1db4 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x00000001005c4328 cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x0000000100593640 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x00000001005e428c cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x00000001005e4418 cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001005f42d0 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x00000001835e2f94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001835ddd34 thread_start + 8
+

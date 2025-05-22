@@ -1,0 +1,3 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_practice_author_books:test_E2E.py:362 Test case: Click on the Author Books
+[32mINFO    [0m test_practice_author_books:test_E2E.py:363 Test case: Clicking on the Practice Tile present in the Book TOC

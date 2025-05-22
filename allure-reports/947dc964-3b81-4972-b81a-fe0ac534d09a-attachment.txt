@@ -1,0 +1,28 @@
+Message: invalid session id: session deleted as the browser has closed the connection
+from disconnected: unable to send message to renderer
+  (Session info: chrome=135.0.7049.115)
+Stacktrace:
+0   chromedriver                        0x00000001012bea54 cxxbridge1$str$ptr + 2803960
+1   chromedriver                        0x00000001012b6cf0 cxxbridge1$str$ptr + 2771860
+2   chromedriver                        0x0000000100e02864 cxxbridge1$string$len + 93028
+3   chromedriver                        0x0000000100debe44 cxxbridge1$string$len + 324
+4   chromedriver                        0x0000000100dea680 chromedriver + 190080
+5   chromedriver                        0x0000000100deb414 chromedriver + 193556
+6   chromedriver                        0x0000000100e06870 cxxbridge1$string$len + 109424
+7   chromedriver                        0x0000000100e07084 cxxbridge1$string$len + 111492
+8   chromedriver                        0x0000000100e0a7a0 cxxbridge1$string$len + 125600
+9   chromedriver                        0x0000000100e0a848 cxxbridge1$string$len + 125768
+10  chromedriver                        0x0000000100e48fe0 cxxbridge1$string$len + 381664
+11  chromedriver                        0x0000000100e8a480 cxxbridge1$string$len + 649088
+12  chromedriver                        0x0000000100e3d7ec cxxbridge1$string$len + 334572
+13  chromedriver                        0x0000000101283ccc cxxbridge1$str$ptr + 2562928
+14  chromedriver                        0x0000000101286f98 cxxbridge1$str$ptr + 2575932
+15  chromedriver                        0x00000001012642c4 cxxbridge1$str$ptr + 2433384
+16  chromedriver                        0x0000000101287810 cxxbridge1$str$ptr + 2578100
+17  chromedriver                        0x00000001012552f0 cxxbridge1$str$ptr + 2371988
+18  chromedriver                        0x00000001012a757c cxxbridge1$str$ptr + 2708512
+19  chromedriver                        0x00000001012a7708 cxxbridge1$str$ptr + 2708908
+20  chromedriver                        0x00000001012b693c cxxbridge1$str$ptr + 2770912
+21  libsystem_pthread.dylib             0x0000000185f2af94 _pthread_start + 136
+22  libsystem_pthread.dylib             0x0000000185f25d34 thread_start + 8
+

@@ -1,0 +1,22 @@
+No Search result Found for the searched topic Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'Videos')]"}
+  (Session info: MicrosoftEdge=117.0.2045.35); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   msedgedriver                        0x000000010106ba10 msedgedriver + 4160016
+1   msedgedriver                        0x0000000101063ad0 msedgedriver + 4127440
+2   msedgedriver                        0x0000000100cad338 msedgedriver + 234296
+3   msedgedriver                        0x0000000100ce5310 msedgedriver + 463632
+4   msedgedriver                        0x0000000100d11650 msedgedriver + 644688
+5   msedgedriver                        0x0000000100cdcd04 msedgedriver + 429316
+6   msedgedriver                        0x0000000100cddbb8 msedgedriver + 433080
+7   msedgedriver                        0x000000010103a070 msedgedriver + 3956848
+8   msedgedriver                        0x000000010103d6cc msedgedriver + 3970764
+9   msedgedriver                        0x000000010103d1bc msedgedriver + 3969468
+10  msedgedriver                        0x0000000101042500 msedgedriver + 3990784
+11  msedgedriver                        0x000000010103dd7c msedgedriver + 3972476
+12  msedgedriver                        0x000000010102061c msedgedriver + 3851804
+13  msedgedriver                        0x000000010105547c msedgedriver + 4068476
+14  msedgedriver                        0x00000001010555a8 msedgedriver + 4068776
+15  msedgedriver                        0x0000000101062d5c msedgedriver + 4123996
+16  libsystem_pthread.dylib             0x000000018b0fef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000018b0f9d34 thread_start + 8
+

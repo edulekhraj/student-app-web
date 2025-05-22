@@ -24,7 +24,7 @@ class UserHome(PracticeHomePage, TestHomePage):
     video_carousel = (
         By.XPATH, "//div[text()='Trending Videos for Your Exam']/parent::div/div[2]/div[2]/div/div[4]/div")
     add_fav_book = (By.XPATH,
-                    "//img[@data-srcset ='https://sss.embibe.com/cdn-cgi/image/q=80,w=450,fit=scale-down,onerror=redirect/https://assets.embibe.com/production/web-assets/assets/images/Home/en/manage_books.png']/parent::div/parent::div/parent::div/div[2]")
+                    "//div[@id='app']/main/div[2]/div/div[4]/div[2]/div/div/div[1]/div/div/div/div[1]/div")
     add_book = (By.XPATH, "//*[@id='app']/main/div[2]/div/div/div[1]/div[4]/div/div[2]/div/div[4]/div/div/div/div[2]")
     done_button = (By.XPATH, "//*[text()='Done']")
     test_tile = (By.XPATH, '//*[@id="app"]/main/div[2]/div/div[6]/div[2]/div[2]/div/div[1]/div/div/div/div[4]')
@@ -97,7 +97,7 @@ class UserHome(PracticeHomePage, TestHomePage):
         self.click_element(UserHome.past_live_class_watch_now_btn)
         self.click_element(UserHome.live_class_watch_recording_btn)
         self.click_element(UserHome.live_class_performance_button)
-
+        time.sleep(5)
         self.wait_for_visibility(UserHome.live_class_chat_button)
         self.click_element(UserHome.live_class_performance_button)
 
@@ -109,28 +109,28 @@ class UserHome(PracticeHomePage, TestHomePage):
 
         fav_books_element = self.wait_for_visibility((By.XPATH, "//*[contains(text(),'My Favourite Books')]"))
         self.driver.execute_script("arguments[0].scrollIntoView();", fav_books_element)
-
+        time.sleep(5)
         self.click_element(UserHome.add_fav_book)
 
-        icon_xpath = "//*[@id='app']/main/div[2]/div/div/div[1]/div[2]/div/div[2]/div/div[1]/div/div/div/div[2]/i"
-
-        try:
-        # Check if the element is displayed and click it
-            icon_element = self.driver.find_element(By.XPATH, icon_xpath)
-            if icon_element.is_displayed():
-                icon_element.click()
-        except Exception as e:
-            print(f"Icon element not found or not clickable: {e}")
-
-    # Click on the 'Add Book' button
-        WebDriverWait(self.driver, 10).until(
-            EC.element_to_be_clickable(UserHome.add_book)
-        ).click()
-
-    # Click on the 'Done' button
-        WebDriverWait(self.driver, 10).until(
-        EC.element_to_be_clickable(UserHome.done_button)
-        ).click()
+    #     icon_xpath = "//*[@id='app']/main/div[2]/div/div/div[1]/div[2]/div/div[2]/div/div[1]/div/div/div/div[2]/i"
+    #
+    #     try:
+    #     # Check if the element is displayed and click it
+    #         icon_element = self.driver.find_element(By.XPATH, icon_xpath)
+    #         if icon_element.is_displayed():
+    #             icon_element.click()
+    #     except Exception as e:
+    #         print(f"Icon element not found or not clickable: {e}")
+    #
+    # # Click on the 'Add Book' button
+    #     WebDriverWait(self.driver, 10).until(
+    #         EC.element_to_be_clickable(UserHome.add_book)
+    #     ).click()
+    #
+    # # Click on the 'Done' button
+    #     WebDriverWait(self.driver, 10).until(
+    #     EC.element_to_be_clickable(UserHome.done_button)
+    #     ).click()
 
 
 

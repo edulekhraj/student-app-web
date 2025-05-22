@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_update_avatar:test_E2E.py:524 Test case : User Updates Profile avatar

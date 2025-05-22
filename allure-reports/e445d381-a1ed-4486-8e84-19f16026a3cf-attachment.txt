@@ -1,0 +1,20 @@
+Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[starts-with(@class,'eds-btn eds-btn--primary eds-btn--capsular eds-btn--md')]"}
+  (Session info: chrome=136.0.7103.93); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001046583bc cxxbridge1$str$ptr + 2829900
+1   chromedriver                        0x0000000104650684 cxxbridge1$str$ptr + 2797844
+2   chromedriver                        0x000000010418dfbc cxxbridge1$string$len + 90140
+3   chromedriver                        0x00000001041d51bc cxxbridge1$string$len + 381468
+4   chromedriver                        0x0000000104216044 cxxbridge1$string$len + 647332
+5   chromedriver                        0x00000001041c93f8 cxxbridge1$string$len + 332888
+6   chromedriver                        0x000000010461c7e0 cxxbridge1$str$ptr + 2585200
+7   chromedriver                        0x000000010461fab0 cxxbridge1$str$ptr + 2598208
+8   chromedriver                        0x00000001045fddb4 cxxbridge1$str$ptr + 2459716
+9   chromedriver                        0x0000000104620328 cxxbridge1$str$ptr + 2600376
+10  chromedriver                        0x00000001045ef640 cxxbridge1$str$ptr + 2400464
+11  chromedriver                        0x000000010464028c cxxbridge1$str$ptr + 2731292
+12  chromedriver                        0x0000000104640418 cxxbridge1$str$ptr + 2731688
+13  chromedriver                        0x00000001046502d0 cxxbridge1$str$ptr + 2796896
+14  libsystem_pthread.dylib             0x00000001835e2f94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x00000001835ddd34 thread_start + 8
+

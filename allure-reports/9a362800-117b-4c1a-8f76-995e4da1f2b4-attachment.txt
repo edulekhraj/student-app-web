@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_create_PAJ_journey:test_E2E.py:708 Test case: User creates PAJ Journey

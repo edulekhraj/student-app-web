@@ -1,0 +1,20 @@
+No Search result Found for the searched topic Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[contains(text(), 'Videos')]"}
+  (Session info: chrome=135.0.7049.115); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010537ea54 cxxbridge1$str$ptr + 2803960
+1   chromedriver                        0x0000000105376cf0 cxxbridge1$str$ptr + 2771860
+2   chromedriver                        0x0000000104ec2864 cxxbridge1$string$len + 93028
+3   chromedriver                        0x0000000104f09410 cxxbridge1$string$len + 382736
+4   chromedriver                        0x0000000104f4a480 cxxbridge1$string$len + 649088
+5   chromedriver                        0x0000000104efd7ec cxxbridge1$string$len + 334572
+6   chromedriver                        0x0000000105343ccc cxxbridge1$str$ptr + 2562928
+7   chromedriver                        0x0000000105346f98 cxxbridge1$str$ptr + 2575932
+8   chromedriver                        0x00000001053242c4 cxxbridge1$str$ptr + 2433384
+9   chromedriver                        0x0000000105347810 cxxbridge1$str$ptr + 2578100
+10  chromedriver                        0x00000001053152f0 cxxbridge1$str$ptr + 2371988
+11  chromedriver                        0x000000010536757c cxxbridge1$str$ptr + 2708512
+12  chromedriver                        0x0000000105367708 cxxbridge1$str$ptr + 2708908
+13  chromedriver                        0x000000010537693c cxxbridge1$str$ptr + 2770912
+14  libsystem_pthread.dylib             0x000000018466ef94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000184669d34 thread_start + 8
+

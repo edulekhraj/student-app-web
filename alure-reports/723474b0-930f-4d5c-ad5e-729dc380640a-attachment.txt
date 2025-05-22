@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_click_learn_card_deeplink:test_E2E.py:604 Test case: User clicks on Learn Card Deeplink button present in the Simple MonetisationPage

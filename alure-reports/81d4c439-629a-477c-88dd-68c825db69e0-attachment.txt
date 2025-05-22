@@ -1,0 +1,27 @@
+Message: element click intercepted: Element is not clickable at point (354, 756)
+  (Session info: MicrosoftEdge=117.0.2045.35)
+Stacktrace:
+0   msedgedriver                        0x0000000100a8ba10 msedgedriver + 4160016
+1   msedgedriver                        0x0000000100a83ad0 msedgedriver + 4127440
+2   msedgedriver                        0x00000001006cd338 msedgedriver + 234296
+3   msedgedriver                        0x0000000100709474 msedgedriver + 480372
+4   msedgedriver                        0x00000001007081c4 msedgedriver + 475588
+5   msedgedriver                        0x0000000100706a70 msedgedriver + 469616
+6   msedgedriver                        0x00000001007062ec msedgedriver + 467692
+7   msedgedriver                        0x00000001006fe7e0 msedgedriver + 436192
+8   msedgedriver                        0x00000001006fe250 msedgedriver + 434768
+9   msedgedriver                        0x0000000100731650 msedgedriver + 644688
+10  msedgedriver                        0x00000001006fcd04 msedgedriver + 429316
+11  msedgedriver                        0x00000001006fdbb8 msedgedriver + 433080
+12  msedgedriver                        0x0000000100a5a070 msedgedriver + 3956848
+13  msedgedriver                        0x0000000100a5d6cc msedgedriver + 3970764
+14  msedgedriver                        0x0000000100a5d1bc msedgedriver + 3969468
+15  msedgedriver                        0x0000000100a62500 msedgedriver + 3990784
+16  msedgedriver                        0x0000000100a5dd7c msedgedriver + 3972476
+17  msedgedriver                        0x0000000100a4061c msedgedriver + 3851804
+18  msedgedriver                        0x0000000100a7547c msedgedriver + 4068476
+19  msedgedriver                        0x0000000100a755a8 msedgedriver + 4068776
+20  msedgedriver                        0x0000000100a82d5c msedgedriver + 4123996
+21  libsystem_pthread.dylib             0x000000018b0fef94 _pthread_start + 136
+22  libsystem_pthread.dylib             0x000000018b0f9d34 thread_start + 8
+

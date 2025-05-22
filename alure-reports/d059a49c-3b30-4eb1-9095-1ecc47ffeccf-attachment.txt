@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_same_exam_subject_button_is_present_in_LPT_Modules:test_E2E.py:73 Testcase: Same Exam Subjects button is present in Learn,Practice, Test Module

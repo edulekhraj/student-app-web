@@ -22,7 +22,7 @@ def pytest_sessionstart(session):
     clear_allure_results()
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome", help="Type of browser. Default is chrome.")
+    parser.addoption("--browser", action="store", default="edge", help="Type of browser. Default is chrome.")
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport(item, call):

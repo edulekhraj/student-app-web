@@ -1,0 +1,5 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_practicechapters:test_E2E.py:259 Test case: Clicking on Practice Chapter in Practice Home
+[32mINFO    [0m test_practicechapters:test_E2E.py:260 Test case: Practice Now Button is displayed in the Practice Summary
+[32mINFO    [0m test_practicechapters:test_E2E.py:261 Test case: User is navigated to Practice Taking Screen on clicking on Practice Now button
+[32mINFO    [0m test_practicechapters:test_E2E.py:263 Test case: User attempts 5 questions and view Learn Intervention screen

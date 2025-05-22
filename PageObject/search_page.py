@@ -1,10 +1,10 @@
-import time
 
+import time
+from Utilities import utility
 from selenium.common import NoSuchElementException, ElementClickInterceptedException
 from selenium.webdriver import Keys
 from selenium.webdriver.common import keys
 from selenium.webdriver.common.by import By
-
 from PageObject.learn_home_page import LearnHomePage
 from PageObject.practice_home_page import PracticeHomePage
 from PageObject.test_home_page import TestHomePage
@@ -27,11 +27,13 @@ class SearchPage:
     goal_update_popup = (By.XPATH, "//span[contains(text(),'Do you want to take ')]")
     update_btn_click =(By.XPATH, "//span[contains(text(),'Update')]")
 
+    keyword = utility.utility.readConfig('Prod', 'search_keyword')
+
     def search_videos_tabs(self):
 
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("Wave")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(5)
             self.driver.find_element(*SearchPage.videos_tab).click()
@@ -62,13 +64,13 @@ class SearchPage:
     def search_books_tabs(self):
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("Wave")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(5)
             self.driver.find_element(*SearchPage.books_tab).click()
             time.sleep(3)
             self.driver.find_element(*SearchPage.search_result_tile).click()
-            time.sleep(3)
+            time.sleep(8)
             self.driver.find_element(*LearnHomePage.book_video_tile).click()
             self.driver.find_element(By.XPATH, "//*[@id='app']/main/div[2]/div[2]/div[1]/div/div[1]/div[2]/div").is_displayed()
         except NoSuchElementException as e:
@@ -77,7 +79,7 @@ class SearchPage:
     def search_questions_tab(self):
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("magnetic current")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(5)
             self.driver.find_element(*SearchPage.questions_tab).click()
@@ -90,7 +92,7 @@ class SearchPage:
     def search_practice_tab(self):
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("force")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(10)
             self.driver.find_element(*SearchPage.practice_tab).click()
@@ -114,7 +116,7 @@ class SearchPage:
     def search_test_tab(self):
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("mechanical wave test")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(5)
             self.driver.find_element(*SearchPage.test_tab).click()
@@ -136,7 +138,7 @@ class SearchPage:
     def search_ptr_tab(self):
         try:
             self.driver.find_element(*SearchPage.search_field).click()
-            self.driver.find_element(*SearchPage.search_field).send_keys("force")
+            self.driver.find_element(*SearchPage.search_field).send_keys(self.keyword)
             self.driver.find_element(*SearchPage.search_field).send_keys(Keys.ENTER)
             time.sleep(5)
             self.driver.find_element(*SearchPage.ptr_tabs).click()

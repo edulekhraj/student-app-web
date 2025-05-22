@@ -79,7 +79,6 @@ class LearnHomePage:
     book_video_tile = (By.XPATH, "//ol[@class=' coobo']/li[1]/div/div[1]")
 
     def learn_hero_banner(self):
-
         self.driver.find_element(*LearnHomePage.learn_module).click()
         self.driver.find_element(*LearnHomePage.hero_button).is_displayed()
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
@@ -93,7 +92,6 @@ class LearnHomePage:
             self.driver.find_element(*LearnHomePage.hero_button).send_keys(keys.Keys.ESCAPE)
 
     def Banner_belongs_to_the_current_exam(self):
-
         self.driver.find_element(*LearnHomePage.learn_module).click()
         self.driver.find_element(*LearnHomePage.hero_button).is_displayed()
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
@@ -435,21 +433,24 @@ class LearnHomePage:
                     print("No Topic Videos Present")
                     self.driver.back()
 
-                # try:
-                #     self.driver.find_element(*LearnHomePage.related_video).click()
-                #     time.sleep(5)
-                #     self.driver.find_element(*LearnHomePage.related_video_click).click()
-                #     time.sleep(5)
-                #     self.play_video_button()
-                #     self.driver.back()
-                #     time.sleep(2)
-                #     self.driver.back()
-                # except NoSuchElementException:
-                #     print("No related Videos Present")
-                #     self.driver.back()
+                try:
+                    self.driver.find_element(*LearnHomePage.related_video).click()
+                    time.sleep(5)
+                    self.driver.find_element(*LearnHomePage.topic_video).click()
+                    time.sleep(5)
+                    self.play_video_button()
+                    self.driver.back()
+                    time.sleep(2)
+                    self.driver.back()
+                except NoSuchElementException:
+                    print("No related Videos Present")
+                    self.driver.back()
+                    self.driver.back()
+
 
             except NoSuchElementException:
                 print("Embibe Explainers Carousel is not present")
+
 
     def sub_trending_videos_carousels(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
@@ -490,7 +491,6 @@ class LearnHomePage:
 
             except NoSuchElementException:
                 print("Trending Videos Carousel is not present")
-
 
     def sub_enrich_your_learning_carousels(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
@@ -602,8 +602,6 @@ class LearnHomePage:
             except NoSuchElementException:
                 print("No Books with videos and solutions")
 
-
-
     def sub_embibe_big_books(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
@@ -655,6 +653,7 @@ class LearnHomePage:
     def play_video_button(self):
 
         self.driver.find_element(*LearnHomePage.learn_button).click()
+        time.sleep(3)
         try:
             popup = self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']")
             if popup.is_displayed():
@@ -662,15 +661,19 @@ class LearnHomePage:
                 self.driver.find_element(By.XPATH, "//*[text()='Yes']").click()
                 time.sleep(5)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+                time.sleep(2)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
                 time.sleep(5)
         except NoSuchElementException:
-            time.sleep(10)
+            time.sleep(5)
             self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+            time.sleep(2)
             self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
             time.sleep(5)
 
         except ElementClickInterceptedException:
             time.sleep(5)
             self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+            time.sleep(5)
+            # self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+            self.driver.find_element(By.XPATH, "//*[text()='Close']").click()

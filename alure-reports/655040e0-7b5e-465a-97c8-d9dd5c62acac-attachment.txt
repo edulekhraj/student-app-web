@@ -1,0 +1,2 @@
+[32mINFO    [0m test_learn_continue_learning:test_E2E.py:191 Test case: Playing Videos present in the Continue Learning Carousel
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password

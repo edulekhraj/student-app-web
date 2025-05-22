@@ -1,0 +1,22 @@
+Message: invalid argument: invalid locator
+  (Session info: MicrosoftEdge=117.0.2045.35)
+Stacktrace:
+0   msedgedriver                        0x00000001027bfa10 msedgedriver + 4160016
+1   msedgedriver                        0x00000001027b7ad0 msedgedriver + 4127440
+2   msedgedriver                        0x0000000102401338 msedgedriver + 234296
+3   msedgedriver                        0x0000000102438e58 msedgedriver + 462424
+4   msedgedriver                        0x0000000102465650 msedgedriver + 644688
+5   msedgedriver                        0x0000000102430d04 msedgedriver + 429316
+6   msedgedriver                        0x0000000102431bb8 msedgedriver + 433080
+7   msedgedriver                        0x000000010278e070 msedgedriver + 3956848
+8   msedgedriver                        0x00000001027916cc msedgedriver + 3970764
+9   msedgedriver                        0x00000001027911bc msedgedriver + 3969468
+10  msedgedriver                        0x0000000102796500 msedgedriver + 3990784
+11  msedgedriver                        0x0000000102791d7c msedgedriver + 3972476
+12  msedgedriver                        0x000000010277461c msedgedriver + 3851804
+13  msedgedriver                        0x00000001027a947c msedgedriver + 4068476
+14  msedgedriver                        0x00000001027a95a8 msedgedriver + 4068776
+15  msedgedriver                        0x00000001027b6d5c msedgedriver + 4123996
+16  libsystem_pthread.dylib             0x000000018b0fef94 _pthread_start + 136
+17  libsystem_pthread.dylib             0x000000018b0f9d34 thread_start + 8
+

@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_learn_embibe_big_books:test_E2E.py:110 Testcase: Verify Embibe Big Books - <Subject> carousel is present and no issues in video player

@@ -1,0 +1,4 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_learn_trending_videos:test_E2E.py:203 Test case: Playing  Videos present in the Trending Videos
+[32mINFO    [0m test_learn_trending_videos:test_E2E.py:204 Test case: Playing Videos present in the More Topic Carousel present inside Trending Videos details Page
+[32mINFO    [0m test_learn_trending_videos:test_E2E.py:206 Test case: Playing Videos present in the Related Videos Carousel present inside Trending Videos details Page

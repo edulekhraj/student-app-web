@@ -13,7 +13,7 @@ class GoalExamPage:
         def __init__(self,driver):
             self.driver= driver
 
-        exam_button = (By.XPATH, "//body/div[@id='app']/main[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/button[1]")
+        exam_button = (By.CSS_SELECTOR, "[class='sc-bwrFUB rrmDu tour-EditGoalButton']>button")
         goal_search_field = (By.XPATH, "//div[@class='edit-profile-wrapper']/div[2]/div[2]/input")
         goal_school= (By.XPATH, "//*[contains(text(),'School Exams')]")
         goal_cbse = (By.XPATH, "//*[contains(text(),'CBSE')]")
@@ -50,16 +50,10 @@ class GoalExamPage:
             self.driver.find_element(*GoalExamPage.exam_tab).click()
             self.driver.find_element(*GoalExamPage.hindi_lang_btn).click()
             self.driver.find_element(*GoalExamPage.lang_done_btn).click()
-            time.sleep(2)
-            self.driver.find_element(By.XPATH, "//*[@to='/learn/home']").click()
-            ele = self.driver.find_element(By.XPATH, "//*[@to='/test/home']").text
-            if ele == 'टेस्ट':
-                print("User successfully changed his language to Hindi")
-            else:
-                print("User language not changed")
-            cp = configparser.ConfigParser()
-            cp.read('/Users/lekhraj/StudentAndroidApp/Student-App-Web/Test/config.ini')
-            exam_name = cp.get('Prod', 'exam_name')
+            time.sleep(5)
+           
+            exam_name = utility.readConfig('Prod', 'hero_banner_exam_name')
+            #  = cp.get('Prod', 'exam_name')
             self.driver.find_element(*GoalExamPage.exam_button).click()
             time.sleep(1)
             self.driver.find_element(*GoalExamPage.goal_search_field).send_keys(exam_name)

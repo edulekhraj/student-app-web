@@ -73,128 +73,134 @@ class PracticeHomePage:
         self.practice_taking()
 
     def practice_taking(self):
-        for i in range(1, 4):
-            try:
-                time.sleep(5)
-                question_element = self.driver.find_element(By.XPATH,
-                                                       "//div[@class='Title_title__og5qd']/div[2]/span[2]")
-                question = question_element.text
-                time.sleep(5)
-                print(question)
+        try:
+            for i in range(1, 4):
+                try:
+                    time.sleep(5)
+                    question_element = self.driver.find_element(By.XPATH,
+                                                                "//div[@class='Title_title__og5qd']/div[2]/span[2]")
+                    question = question_element.text
+                    time.sleep(5)
+                    print(question)
 
-                if question_element.is_displayed():
-                    if question == "Multiple Choice":
-                        time.sleep(5)
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        self.driver.find_element(By.XPATH, "//div[@class='question-view-body']/div[2]/div[1]").click()
-                        self.driver.find_element(By.XPATH, "//div[@class='question-view-body']/div[2]/div[2]").click()
-                        self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
-
-                    elif question == "Subjective":
-                        self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
-
-                    elif question == "Subjective Numerical":
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        time.sleep(5)
-                        try:
-                            if self.driver.find_element(By.XPATH, "[status='DEFAULT']").is_displayed():
-                                self.driver.find_element(By.XPATH, "[status='DEFAULT']").click()
-                                time.sleep(2)
-                                self.driver.find_element(By.XPATH, "[status='DEFAULT']").send_keys("1")
-                                time.sleep(2)
-                                self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                                time.sleep(10)
-                                self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
-                        except:
-                            self.driver.find_element(By.XPATH, "//*[text()='Solve With Us']").click()
-                            self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
+                    if question_element.is_displayed():
+                        if question == "Multiple Choice":
+                            time.sleep(5)
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='question-view-body']/div[2]/div[1]").click()
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='question-view-body']/div[2]/div[2]").click()
+                            self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
                             time.sleep(10)
                             self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
 
-                    elif question == "Subjective Answer":
-                        time.sleep(5)
-                        try:
-                            if self.driver.find_element(By.XPATH, "[status='DEFAULT']").is_displayed():
-                                self.driver.find_element(By.XPATH, "[status='DEFAULT']").click()
-                                time.sleep(2)
-                                self.driver.find_element(By.XPATH, "[status='DEFAULT']").send_keys("abc")
-                                time.sleep(2)
-                                self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                        # elif question == "Subjective":
+                        #     self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
+                        #     time.sleep(10)
+                        #     self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+
+                        elif question == "Subjective Numerical":
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            time.sleep(5)
+                            try:
+                                if self.driver.find_element(By.XPATH, "[status='DEFAULT']").is_displayed():
+                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").click()
+                                    time.sleep(2)
+                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").send_keys("1")
+                                    time.sleep(2)
+                                    self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                                    time.sleep(10)
+                                    self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                            except:
+                                self.driver.find_element(By.XPATH, "//*[text()='Solve With Us']").click()
+                                self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
                                 time.sleep(10)
                                 self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
-                        except:
-                            self.driver.find_element(By.XPATH, "//*[text()='Solve With Us']").click()
-                            self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
+
+                        elif question == "Subjective Answer":
+                            time.sleep(5)
+                            try:
+                                if self.driver.find_element(By.XPATH, "[status='DEFAULT']").is_displayed():
+                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").click()
+                                    time.sleep(2)
+                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").send_keys("abc")
+                                    time.sleep(2)
+                                    self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                                    time.sleep(10)
+                                    self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                            except:
+                                self.driver.find_element(By.XPATH, "//*[text()='Solve With Us']").click()
+                                self.driver.find_element(By.XPATH, "//*[text()='Full Solution']").click()
+                                time.sleep(10)
+                                self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+
+                        elif question == "Fill in The Blanks":
+                            time.sleep(5)
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("XYZ")
+                            self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
                             time.sleep(10)
                             self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
 
-                    elif question == "Fill in The Blanks":
-                        time.sleep(5)
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("XYZ")
-                        self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                        elif question == "Integer":
+                            time.sleep(5)
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("1")
+                            self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                            time.sleep(10)
+                            self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
 
-                    elif question == "Integer":
-                        time.sleep(5)
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("1")
-                        self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                        elif question == "Multiple Fill in The Blanks":
+                            time.sleep(5)
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
+                            self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("XYZ")
+                            time.sleep(3)
+                            self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-1']").click()
+                            time.sleep(2)
+                            self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-1']>input").send_keys("abc")
+                            self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                            time.sleep(10)
+                            self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
 
-                    elif question == "Multiple Fill in The Blanks":
-                        time.sleep(5)
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-0']").click()
-                        self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("XYZ")
-                        time.sleep(3)
-                        self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-1']").click()
-                        time.sleep(2)
-                        self.driver.find_element(By.CSS_SELECTOR, "[id='fb-blank-1']>input").send_keys("abc")
-                        self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                        elif question in ["True-False", "Single Choice", "Assertion"]:
+                            time.sleep(5)
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
+                            self.driver.find_element(By.XPATH,
+                                                     "//div[@class='question-view-body']/div[2]/div[1]").click()
+                            self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
+                            time.sleep(10)
+                            self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
 
-                    elif question in ["True-False", "Single Choice", "Assertion"]:
-                        time.sleep(5)
-                        self.driver.find_element(By.XPATH,
-                                            "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
-                        self.driver.find_element(By.XPATH, "//div[@class='question-view-body']/div[2]/div[1]").click()
-                        self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
-                        time.sleep(10)
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue']").click()
+                        elif self.driver.find_element(By.XPATH,
+                                                      "//div[@id='PracticeConatiner']/div/div[1]/div/div[1]").is_displayed():
+                            print("Learn Intervention screen is displayed")
+                            self.driver.find_element(By.XPATH, "//*[text()='Continue Practice']").click()
 
-                    elif self.driver.find_element(By.XPATH,
-                                            "//div[@id='PracticeConatiner']/div/div[1]/div/div[1]").is_displayed():
-                        print("Learn Intervention screen is displayed")
-                        self.driver.find_element(By.XPATH, "//*[text()='Continue Practice']").click()
-
-                    else:
-
+                        else:
                             self.driver.find_element(By.XPATH, "//*[contains(text(),'Solve')]").click()
                             time.sleep(5)
                             self.driver.find_element(By.XPATH, "//*[contains(text(),'Full Solution')]").click()
                             time.sleep(5)
                             self.driver.find_element(By.XPATH, "//*[contains(text(),'Continue')]").click()
                             time.sleep(5)
+                except NoSuchElementException:
+                    self.driver.find_element(By.XPATH, "//div[contains(text(), 'Congratulations,')]").is_displayed()
+                    print("Congratulations, you have finished this topic. Let's move on to the next one.")
 
 
-            except NoSuchElementException:
-                self.driver.find_element(By.XPATH, "//div[contains(text(), 'Congratulations,')]").is_displayed()
-                print("Congratulations, you have finished this topic. Let's move on to the next one.")
+        except NoSuchElementException:
+                    self.driver.find_element(By.XPATH, "//div[contains(text(), 'Congratulations,')]").is_displayed()
+                    print("Congratulations, you have finished this topic. Let's move on to the next one.")
 
         self.driver.find_element(By.CSS_SELECTOR,
                                      "i[class='demo-icon demo-icon--filled demo-icon--sm Title_endSessionIcon__2QErK']").click()

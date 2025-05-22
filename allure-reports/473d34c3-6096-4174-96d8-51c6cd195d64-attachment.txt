@@ -1,0 +1,20 @@
+No Search result Found for the searched topic Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='app']/main/div[2]/div[2]/div[1]/div/div[1]/div[2]/div"}
+  (Session info: chrome=135.0.7049.115); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x00000001005a2a54 cxxbridge1$str$ptr + 2803960
+1   chromedriver                        0x000000010059acf0 cxxbridge1$str$ptr + 2771860
+2   chromedriver                        0x00000001000e6864 cxxbridge1$string$len + 93028
+3   chromedriver                        0x000000010012d410 cxxbridge1$string$len + 382736
+4   chromedriver                        0x000000010016e480 cxxbridge1$string$len + 649088
+5   chromedriver                        0x00000001001217ec cxxbridge1$string$len + 334572
+6   chromedriver                        0x0000000100567ccc cxxbridge1$str$ptr + 2562928
+7   chromedriver                        0x000000010056af98 cxxbridge1$str$ptr + 2575932
+8   chromedriver                        0x00000001005482c4 cxxbridge1$str$ptr + 2433384
+9   chromedriver                        0x000000010056b810 cxxbridge1$str$ptr + 2578100
+10  chromedriver                        0x00000001005392f0 cxxbridge1$str$ptr + 2371988
+11  chromedriver                        0x000000010058b57c cxxbridge1$str$ptr + 2708512
+12  chromedriver                        0x000000010058b708 cxxbridge1$str$ptr + 2708908
+13  chromedriver                        0x000000010059a93c cxxbridge1$str$ptr + 2770912
+14  libsystem_pthread.dylib             0x0000000185f2af94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000185f25d34 thread_start + 8
+

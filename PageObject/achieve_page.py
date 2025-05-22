@@ -5,7 +5,6 @@ from selenium.common import NoSuchElementException, ElementClickInterceptedExcep
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 from PageObject.test_home_page import TestHomePage
 
 
@@ -194,8 +193,11 @@ class achievehomepage(TestHomePage):
         self.wait_for_clickable(achievehomepage.explore_mastery_1st_video).click()
         time.sleep(5)
 
-    def start_PAJ_journey(self):
-        pass
+    def extend_PAJ_journey(self):
+       pass
+
+
+
 
 
 

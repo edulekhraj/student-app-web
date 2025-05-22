@@ -1,0 +1,2 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_recommended_learn_in_full_test_summary:test_E2E.py:354 Test case: User clicks on Recommended Video in Full Test Summary

@@ -1,0 +1,25 @@
+Message: element click intercepted: Element <div style="margin-bottom: 2%; width: 100%;">...</div> is not clickable at point (436, 618). Other element would receive the click: <div class="sc-lkuliq cQzees left-side-buttons">...</div>
+  (Session info: chrome=135.0.7049.115)
+Stacktrace:
+0   chromedriver                        0x0000000100ac2a54 cxxbridge1$str$ptr + 2803960
+1   chromedriver                        0x0000000100abacf0 cxxbridge1$str$ptr + 2771860
+2   chromedriver                        0x0000000100606864 cxxbridge1$string$len + 93028
+3   chromedriver                        0x0000000100652f3c cxxbridge1$string$len + 406076
+4   chromedriver                        0x00000001006514a8 cxxbridge1$string$len + 399272
+5   chromedriver                        0x000000010064f2bc cxxbridge1$string$len + 390588
+6   chromedriver                        0x000000010064e6b8 cxxbridge1$string$len + 387512
+7   chromedriver                        0x000000010064301c cxxbridge1$string$len + 340764
+8   chromedriver                        0x0000000100642aa8 cxxbridge1$string$len + 339368
+9   chromedriver                        0x000000010068e480 cxxbridge1$string$len + 649088
+10  chromedriver                        0x00000001006417ec cxxbridge1$string$len + 334572
+11  chromedriver                        0x0000000100a87ccc cxxbridge1$str$ptr + 2562928
+12  chromedriver                        0x0000000100a8af98 cxxbridge1$str$ptr + 2575932
+13  chromedriver                        0x0000000100a682c4 cxxbridge1$str$ptr + 2433384
+14  chromedriver                        0x0000000100a8b810 cxxbridge1$str$ptr + 2578100
+15  chromedriver                        0x0000000100a592f0 cxxbridge1$str$ptr + 2371988
+16  chromedriver                        0x0000000100aab57c cxxbridge1$str$ptr + 2708512
+17  chromedriver                        0x0000000100aab708 cxxbridge1$str$ptr + 2708908
+18  chromedriver                        0x0000000100aba93c cxxbridge1$str$ptr + 2770912
+19  libsystem_pthread.dylib             0x000000018466ef94 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000184669d34 thread_start + 8
+

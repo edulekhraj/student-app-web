@@ -1,0 +1,3 @@
+[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
+[32mINFO    [0m test_search_videos:test_E2E.py:403 Test case : User searches for video in the search field
+[32mINFO    [0m test_search_videos:test_E2E.py:404 Test case : User watches the searched video
