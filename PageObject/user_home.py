@@ -47,12 +47,13 @@ class UserHome(PracticeHomePage, TestHomePage):
     rl_unit_dd = (By.XPATH, "//*[text()='All Units']")
     rl_chapters_dd = (By.XPATH, "//*[text()='All Chapters']")
     UH_live_class_btn = (
-    By.XPATH, "//*[@id='embibe-live-classes']/img")
+    By.XPATH, "//div[@id='embibe-live-classes']/span")
     past_live_class_watch_now_btn = (By.XPATH,
-                                     "//*[text()='Past Live Classes']/parent::div/div[2]/div[2]/div/div[@data-index='0']/div/div/div/div[5]/button")
+                                     "//div[text()='Past Classes']/parent::div/div[2]/div[2]/div/div[1]/div/div/div/div[5]/button/span/span")
     live_class_watch_recording_btn = (By.XPATH, "//*[text()='Watch Recording']")
     live_class_chat_button = (By.XPATH, "//*[text()='Chat']")
     live_class_performance_button = (By.XPATH, "//*[text()='Performance']")
+    embibe_explainers = (By.XPATH, "//*[text()='Embibe Explainers']/parent::div/div[2]/div/div/div[2]/div/div/div")
 
     def click_element(self, locator, timeout=10):
         """Click an element after waiting for it to be clickable."""
@@ -91,9 +92,10 @@ class UserHome(PracticeHomePage, TestHomePage):
         self.recommendlearningvideos()
 
     def watch_past_live_class(self):
-        self.click_element(UserHome.user_home)
+        self.driver.get("https://www.embibe.com/user-home/embibe-live-classes")
         time.sleep(5)
-        self.click_element(UserHome.UH_live_class_btn)
+        # self.driver.execute_script("window.scrollBy(0, 200);")
+        # self.click_element(UserHome.UH_live_class_btn)
         self.click_element(UserHome.past_live_class_watch_now_btn)
         self.click_element(UserHome.live_class_watch_recording_btn)
         self.click_element(UserHome.live_class_performance_button)
@@ -154,7 +156,12 @@ class UserHome(PracticeHomePage, TestHomePage):
         assert desc == exp_desc, "Bookmark video descriptions do not match."
 
     def play_bookmark_video(self):
-        self.click_element(UserHome.user_home)
+        self.driver.find_element(*UserHome.embibe_explainers).click()
+        time.sleep(10)
+        self.driver.find_element(By.XPATH, "//*[text()='Bookmark']").click()
+        time.sleep(3)
+        self.driver.get("https://www.embibe.com/user-home")
+        # self.click_element(UserHome.user_home)
         self.scroll_to_bottom()
         self.click_element(UserHome.bookmark_video_tile)
         self.click_element(UserHome.play_all_btn)

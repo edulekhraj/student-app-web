@@ -4,6 +4,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+import Utilities
+from Utilities.utility import utility
+
 
 class EmbibeMonetisation:
 
@@ -15,7 +18,7 @@ class EmbibeMonetisation:
     achieve_now_card_price = (By.XPATH, "//div[@order=3]/div[2]/div/span[2]")
     checkout_price = (By.XPATH, "//tr[@class='final-row']/td[2]")
 
-    try_live_class = (By.XPATH, "//*[text()='Try Live Class']")
+    try_live_class = (By.XPATH, "//*[text()='Try Recorded Class']")
     try_lens = (By.XPATH, "//*[text()='Try Lens']")
     try_plantale = (By.XPATH, "//*[@type ='PLANTALE_AR_APP']/div[2]/button")
     try_brainapse = (By.XPATH, "//*[@type ='BRAINAPSE_AR_APP']/div[2]/button")
@@ -46,9 +49,11 @@ class EmbibeMonetisation:
         """Wait until an element is clickable and return it."""
         return self.wait.until(EC.element_to_be_clickable(locator))
 
+    url = utility.readConfig('Prod', 'monetisation_url')
+
     def achieve_now_plan(self):
         time.sleep(3)
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         # Click the "Achieve Now" button
         time.sleep(5)
         self.wait_for_clickable(EmbibeMonetisation.achieve_now).click()
@@ -70,7 +75,7 @@ class EmbibeMonetisation:
 
     def achieve_sprint_plan(self):
         time.sleep(3)
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         time.sleep(5)
 
         # Click the "Achieve Now" button
@@ -93,7 +98,7 @@ class EmbibeMonetisation:
 
     def achieve_unlimited_plan(self):
         time.sleep(3)
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         time.sleep(5)
 
         # Click the "Achieve Now" button
@@ -117,7 +122,7 @@ class EmbibeMonetisation:
 
     def click_live_class_button(self):
         time.sleep(3)
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_live_class).click()
         windows=self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -125,7 +130,7 @@ class EmbibeMonetisation:
         
 
     def click_lens_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_lens).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -134,7 +139,7 @@ class EmbibeMonetisation:
 
 
     def click_plantale_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_plantale).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -143,7 +148,7 @@ class EmbibeMonetisation:
         #
 
     def click_brainapse_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_brainapse).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -151,7 +156,7 @@ class EmbibeMonetisation:
         
 
     def click_froggipedia_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_froggipedia).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -159,7 +164,7 @@ class EmbibeMonetisation:
         
 
     def click_learn_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_learn).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -167,7 +172,7 @@ class EmbibeMonetisation:
         
 
     def click_achieve_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_achieve).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -175,13 +180,13 @@ class EmbibeMonetisation:
         
 
     def click_practice_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_practice).click()
-        windows = self.driver.window_handles
+        # windows = self.driver.window_handles
         
 
     def click_test_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_test).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -189,7 +194,7 @@ class EmbibeMonetisation:
         
 
     def click_revision_list_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_revision_list).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -197,7 +202,7 @@ class EmbibeMonetisation:
         
 
     def click_parent_app_button(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_parent_app).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
@@ -205,7 +210,7 @@ class EmbibeMonetisation:
         
 
     def click_doubt_resolution(self):
-        self.driver.get("https://www.embibe.com/subscription/plans")
+        self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_doubt_resolution).click()
         time.sleep(3)
 

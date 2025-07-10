@@ -19,7 +19,7 @@ class utility:
 
     def readConfig(section, key):
             config = configparser.ConfigParser()
-            config.read("/Users/lekhraj/StudentAndroidApp/Student-App-Web/testdata/testdata.ini")
+            config.read("/Users/lekhraj.p/PycharmProjects/student-app-web/testdata/testdata.ini")
             return config.get(section, key)
 
 

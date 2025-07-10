@@ -6,6 +6,8 @@ from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.safari.options import Options as SafariOptions
+from selenium.webdriver.common.by import By
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 from Utilities.utility import utility
@@ -22,7 +24,7 @@ def pytest_sessionstart(session):
     clear_allure_results()
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="edge", help="Type of browser. Default is chrome.")
+    parser.addoption("--browser", action="store", default="chrome", help="Type of browser. Default is chrome.")
 
 @pytest.hookimpl(hookwrapper=True, tryfirst=True)
 def pytest_runtest_makereport(item, call):
@@ -46,16 +48,22 @@ def setup(request, browser):
         edge_options = EdgeOptions()
         edge_options.add_argument('--disable-notifications')
         driver = webdriver.Edge(options=edge_options)
-    elif browser == "firefox":
-        firefox_options = FirefoxOptions()
-        firefox_options.add_argument("--disable-notifications")
-        driver = webdriver.Firefox(options=firefox_options)
+    elif browser == "safari":
+        try:
+            allow_button = driver.find_element(By.XPATH, "//*[text()='Allow']")
+            allow_button.click()
+        except :
+            pass
+        safari_options = SafariOptions()
+        safari_options.add_argument("--disable-notifications")
+        driver = webdriver.Safari(options=safari_options)
     else:
         raise ValueError(f"Browser {browser} is not supported.")
 
     url = utility.readConfig('Prod', 'url')
     driver.get(url)
     driver.maximize_window()
+    
     driver.implicitly_wait(20)
     request.cls.driver = driver
 

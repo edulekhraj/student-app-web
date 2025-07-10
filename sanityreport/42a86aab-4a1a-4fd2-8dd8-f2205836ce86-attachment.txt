@@ -1,0 +1,25 @@
+Message: element click intercepted: Element is not clickable at point (541, 780)
+  (Session info: chrome=138.0.7204.93)
+Stacktrace:
+0   chromedriver                        0x0000000100654e6c cxxbridge1$str$ptr + 2722840
+1   chromedriver                        0x000000010064cd74 cxxbridge1$str$ptr + 2689824
+2   chromedriver                        0x000000010019e3ec cxxbridge1$string$len + 90648
+3   chromedriver                        0x00000001001eb0a8 cxxbridge1$string$len + 405204
+4   chromedriver                        0x00000001001e9614 cxxbridge1$string$len + 398400
+5   chromedriver                        0x00000001001e7428 cxxbridge1$string$len + 389716
+6   chromedriver                        0x00000001001e6824 cxxbridge1$string$len + 386640
+7   chromedriver                        0x00000001001db358 cxxbridge1$string$len + 340356
+8   chromedriver                        0x00000001001dade4 cxxbridge1$string$len + 338960
+9   chromedriver                        0x0000000100226934 cxxbridge1$string$len + 649056
+10  chromedriver                        0x00000001001d9834 cxxbridge1$string$len + 333408
+11  chromedriver                        0x0000000100617f88 cxxbridge1$str$ptr + 2473268
+12  chromedriver                        0x000000010061b1f4 cxxbridge1$str$ptr + 2486176
+13  chromedriver                        0x00000001005f99d0 cxxbridge1$str$ptr + 2348924
+14  chromedriver                        0x000000010061bab0 cxxbridge1$str$ptr + 2488412
+15  chromedriver                        0x00000001005eaa60 cxxbridge1$str$ptr + 2287628
+16  chromedriver                        0x000000010063b9a0 cxxbridge1$str$ptr + 2619212
+17  chromedriver                        0x000000010063bb2c cxxbridge1$str$ptr + 2619608
+18  chromedriver                        0x000000010064c9b0 cxxbridge1$str$ptr + 2688860
+19  libsystem_pthread.dylib             0x0000000193f26f94 _pthread_start + 136
+20  libsystem_pthread.dylib             0x0000000193f21d34 thread_start + 8
+

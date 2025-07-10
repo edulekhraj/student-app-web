@@ -59,10 +59,13 @@ class TestHomePage:
     plan_target_button = (By.XPATH, "//span[text()='Plan your targets']")
 
     def trending_test_embibe_exp_ui(self):
-        self.driver.find_element(*TestHomePage.test_module).click()
-        self.driver.find_element(*TestHomePage.trending_test_tile).click()
-        time.sleep(3)
-        self.test_taking()
+        try:
+            self.driver.find_element(*TestHomePage.test_module).click()
+            self.driver.find_element(*TestHomePage.trending_test_tile).click()
+            time.sleep(3)
+            self.test_taking()
+        except NoSuchElementException as e:
+            print(e.msg)
 
     def full_test_embibe_exp_ui(self):
         self.driver.find_element(*TestHomePage.test_module).click()

@@ -485,7 +485,7 @@ class TestEmbibe(utility):
     #     log.info("Test case: User add's favourite books")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.home
+    @pytest.mark.homee
     def test_play_bookmark_videos(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -559,7 +559,7 @@ class TestEmbibe(utility):
         log.info("Test case: User clicks on Lens Card Deeplink button present in the Simple MonetisationPage")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.deeplink
+    @pytest.mark.home
     def test_click_live_class_card_deeplink(self):
         log = self.getLogger()
         self.test_sign_in_password()

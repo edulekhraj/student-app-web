@@ -13,7 +13,7 @@ class GoalExamPage:
         def __init__(self,driver):
             self.driver= driver
 
-        exam_button = (By.CSS_SELECTOR, "[class='sc-bwrFUB rrmDu tour-EditGoalButton']>button")
+        exam_button = (By.CSS_SELECTOR, "[class='eds-btn eds-btn--secondary eds-btn--capsular eds-btn--sm sc-fSjEuY csCiif']")
         goal_search_field = (By.XPATH, "//div[@class='edit-profile-wrapper']/div[2]/div[2]/input")
         goal_school= (By.XPATH, "//*[contains(text(),'School Exams')]")
         goal_cbse = (By.XPATH, "//*[contains(text(),'CBSE')]")

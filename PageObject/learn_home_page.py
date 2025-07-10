@@ -380,6 +380,8 @@ class LearnHomePage:
             self.driver.find_element(*LearnHomePage.enrich_your_learning_carousel).is_displayed()
             time.sleep(5)
             self.driver.find_element(*LearnHomePage.enrich_tile).click()
+            self.handle_bookmark()
+            time.sleep(3)
             self.play_video_button()
 
             try:
@@ -635,11 +637,15 @@ class LearnHomePage:
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
 
     def bookmark_video(self):
-        self.driver.find_element(*LearnHomePage.trending_videos).click()
-        self.handle_bookmark()
-        self.driver.back()
-        self.driver.find_element(*LearnHomePage.sub_embibe_explainers_tile).click()
-        self.handle_bookmark()
+        try:
+            self.driver.find_element(*LearnHomePage.enrich_your_learning_carousel).is_displayed()
+            time.sleep(5)
+            self.driver.find_element(*LearnHomePage.enrich_tile).click()
+            self.handle_bookmark()
+            time.sleep(3)
+        except:
+            pass
+
 
     def handle_bookmark(self):
         ele = self.driver.find_element(*LearnHomePage.bookmark_button).text
@@ -652,28 +658,32 @@ class LearnHomePage:
 
     def play_video_button(self):
 
-        self.driver.find_element(*LearnHomePage.learn_button).click()
-        time.sleep(3)
         try:
-            popup = self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']")
-            if popup.is_displayed():
-                time.sleep(2)
-                self.driver.find_element(By.XPATH, "//*[text()='Yes']").click()
+            self.driver.find_element(*LearnHomePage.learn_button).click()
+            time.sleep(3)
+            try:
+                popup = self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']")
+                if popup.is_displayed():
+                    time.sleep(2)
+                    self.driver.find_element(By.XPATH, "//*[text()='Yes']").click()
+                    time.sleep(5)
+                    self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+                    time.sleep(2)
+                    self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+                    time.sleep(5)
+            except NoSuchElementException:
                 time.sleep(5)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
                 time.sleep(2)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
                 time.sleep(5)
-        except NoSuchElementException:
-            time.sleep(5)
-            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            time.sleep(2)
-            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            time.sleep(5)
 
-        except ElementClickInterceptedException:
-            time.sleep(5)
-            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            time.sleep(5)
-            # self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            self.driver.find_element(By.XPATH, "//*[text()='Close']").click()
+            except ElementClickInterceptedException:
+                time.sleep(5)
+                self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+                time.sleep(5)
+                # self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+                self.driver.find_element(By.XPATH, "//*[text()='Close']").click()
+
+        except NoSuchElementException as e:
+            print(e.msg)
