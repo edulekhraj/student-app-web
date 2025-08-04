@@ -41,7 +41,6 @@ class GoalExamPage:
             self.driver.find_element(*GoalExamPage.lang_done_btn).click()
             time.sleep(10)
 
-
         def hero_banner_goal_exam_selection_hin(self):
             time.sleep(3)
             self.driver.find_element(*GoalExamPage.exam_button).click()
@@ -50,7 +49,7 @@ class GoalExamPage:
             self.driver.find_element(*GoalExamPage.exam_tab).click()
             self.driver.find_element(*GoalExamPage.hindi_lang_btn).click()
             self.driver.find_element(*GoalExamPage.lang_done_btn).click()
-            time.sleep(5)
+            time.sleep(2)
            
             exam_name = utility.readConfig('Prod', 'hero_banner_exam_name')
             #  = cp.get('Prod', 'exam_name')

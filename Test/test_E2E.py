@@ -17,6 +17,7 @@ from Utilities.utility import utility
 class TestEmbibe(utility):
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
+
     def test_sign_in_password(self):
         login = signIn_up(self.driver)
         login.test_sign_in_password()
@@ -485,7 +486,7 @@ class TestEmbibe(utility):
     #     log.info("Test case: User add's favourite books")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.homee
+    @pytest.mark.home
     def test_play_bookmark_videos(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -724,6 +725,43 @@ class TestEmbibe(utility):
         gep = GoalExamPage(self.driver)
         gep.edit_goal_exam()
         log.info("Test case: Edit Goal from the Profile Screen")
+
+    # @pytest.mark.usefixtures("setup", "log_on_failure")
+    # @pytest.mark.assignments
+    # def test_recap_videos(self):
+    #     log = self.getLogger()
+    #     self.test_signIn_email()
+    #     UH = UserHome(self.driver)
+    #     UH.school_assignment_recap_videos()
+    #     log.info("Test case: User watches Recap videos from School Assignment")
+    #
+    # @pytest.mark.usefixtures("setup", "log_on_failure")
+    # @pytest.mark.assignments
+    # def test_prerequisite_videos(self):
+    #     log = self.getLogger()
+    #     self.test_signIn_email()
+    #     UH = UserHome(self.driver)
+    #     UH.school_assignment_prerequisite_videos()
+    #     log.info("Test case: User watches Prerequisites videos from School Assignment")
+    #
+    # @pytest.mark.usefixtures("setup", "log_on_failure")
+    # @pytest.mark.assignmentss
+    # def test_school_full_tests(self):
+    #     log = self.getLogger()
+    #     self.test_signIn_email()
+    #     UH = UserHome(self.driver)
+    #     UH.school_assignment_full_tests()
+    #     log.info("Test case: User attempts full Test's from School Assignment")
+    #
+    # @pytest.mark.usefixtures("setup", "log_on_failure")
+    # @pytest.mark.assignmentss
+    # def test_school_chapter_tests(self):
+    #     log = self.getLogger()
+    #     self.test_signIn_email()
+    #     UH = UserHome(self.driver)
+    #     UH.school_assignment_chapter_tests()
+    #     log.info("Test case: User attempts Chapter Test's from School Assignment")
+
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.profile

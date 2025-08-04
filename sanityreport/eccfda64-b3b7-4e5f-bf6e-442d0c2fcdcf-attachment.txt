@@ -1,3 +1,0 @@
-[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
-[32mINFO    [0m test_CYOT:test_E2E.py:392 Test case: Create CYOT - Custom Test
-[32mINFO    [0m test_CYOT:test_E2E.py:393 Test case: User is able to take CYOT - Custom Test

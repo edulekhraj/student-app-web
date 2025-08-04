@@ -294,25 +294,17 @@ class TestHomePage:
         try:
             btn = self.driver.find_element(*TestHomePage.test_btn_status).text
 
-            if btn == 'Start Test':
-                self.driver.find_element(*TestHomePage.start_test).click()
-                try:
-                    popup_element = self.driver.find_element(*TestHomePage.test_env_popup)
-                    if popup_element.is_displayed():
-                        self.driver.find_element(*TestHomePage.sel_embibe_expUI).click()
-                        self.driver.find_element(*TestHomePage.instruct_chkbox).click()
-                        self.driver.find_element(*TestHomePage.start_now).click()
-                except NoSuchElementException:
-                    self.driver.find_element(*TestHomePage.instruct_chkbox).click()
-                    self.driver.find_element(*TestHomePage.start_now).click()
-
-            elif btn == 'Expired':
+            if btn == 'Expired':
                 print("Test has been Expired")
 
             elif btn == 'Resume Test':
                 self.driver.find_element(*TestHomePage.resume_test).click()
+
             elif btn == 'View Test Feedback':
                 print("Test already Taken")
+
+            elif btn =='Start Test':
+                self.driver.find_element(*TestHomePage.start_test).click()
 
             time.sleep(5)
             ele = self.driver.find_elements(By.XPATH, "//div[@class='test-wrapper ']/div/div[2]/div[1]/button")

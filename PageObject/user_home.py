@@ -13,6 +13,7 @@ class UserHome(PracticeHomePage, TestHomePage):
     def __init__(self, driver):
         self.driver = driver
 
+
     user_home = (By.XPATH, "//span[text()='Home']")
     bookmark_video_tile = (
         By.XPATH, "//div[text()='My Bookmarks']/parent::div/div[2]/div/div[1]/div[1]/div/div/div/div[2]")
@@ -54,7 +55,12 @@ class UserHome(PracticeHomePage, TestHomePage):
     live_class_chat_button = (By.XPATH, "//*[text()='Chat']")
     live_class_performance_button = (By.XPATH, "//*[text()='Performance']")
     embibe_explainers = (By.XPATH, "//*[text()='Embibe Explainers']/parent::div/div[2]/div/div/div[2]/div/div/div")
-
+    recap_video_tile = (By.XPATH, "//*[contains(text(),'Recap Videos from QA Prod')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
+    assignment_tile = (By.XPATH, "//div[@class='home-assignment-wrapper__section-data-wrapper hide-scrollbar']/div/div[2]/div[1]/div/div[1]")
+    prerequisite_video_tile = (By.XPATH, "//*[contains(text(),'Pre-Requisite')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
+    school_full_test_tile = (By.XPATH, "//*[contains(text(),'Test from QA Prod')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div/img")
+    school_chapter_test_tile = (
+    By.XPATH, "//*[contains(text(),'Test from QA Prod')]/parent::div/div[2]/div[2]/div/div[2]/div/div/div/img")
     def click_element(self, locator, timeout=10):
         """Click an element after waiting for it to be clickable."""
         WebDriverWait(self.driver, timeout).until(EC.element_to_be_clickable(locator)).click()
@@ -76,6 +82,42 @@ class UserHome(PracticeHomePage, TestHomePage):
 
         assert self.wait_for_visibility((By.CSS_SELECTOR, ".demo-icon.demo-icon--filled.demo-icon--xs.icon-style")), \
             "Expected icon not found."
+
+    def school_assignment_recap_videos(self):
+        self.click_element(UserHome.user_home)
+        recap_videos_carousel = self.wait_for_visibility((By.XPATH, "//*[contains(text(),'Recap Videos from QA Prod')]"))
+        self.driver.execute_script("arguments[0].scrollIntoView();", recap_videos_carousel)
+        self.click_element(UserHome.recap_video_tile)
+        self.click_element(UserHome.assignment_tile)
+        time.sleep(5)
+
+    def school_assignment_prerequisite_videos(self):
+        self.click_element(UserHome.user_home)
+        prerequisite_videos_carousel = self.wait_for_visibility(
+            (By.XPATH, "//*[contains(text(),'Pre-Requisite Readiness Videos')]"))
+        self.driver.execute_script("arguments[0].scrollIntoView();", prerequisite_videos_carousel)
+        self.click_element(UserHome.prerequisite_video_tile)
+        self.click_element(UserHome.assignment_tile)
+        time.sleep(5)
+
+    def school_assignment_full_tests(self):
+        self.click_element(UserHome.user_home)
+        school_test_carousel = self.wait_for_visibility(
+            (By.XPATH, "//*[contains(text(),'Test from')]"))
+        self.driver.execute_script("arguments[0].scrollIntoView();", school_test_carousel)
+        self.click_element(UserHome.school_full_test_tile)
+        self.click_element(UserHome.assignment_tile)
+        self.test_taking()
+
+    def school_assignment_chapter_tests(self):
+        self.click_element(UserHome.user_home)
+        school_test_carousel = self.wait_for_visibility(
+            (By.XPATH, "//*[contains(text(),'Test from')]"))
+        self.driver.execute_script("arguments[0].scrollIntoView();", school_test_carousel)
+        self.click_element(UserHome.school_chapter_test_tile)
+        self.click_element(UserHome.assignment_tile)
+        time.sleep(5)
+        self.test_taking()
 
     def learn_in_revision_list(self):
         self.click_element(UserHome.user_home)
@@ -113,28 +155,6 @@ class UserHome(PracticeHomePage, TestHomePage):
         self.driver.execute_script("arguments[0].scrollIntoView();", fav_books_element)
         time.sleep(5)
         self.click_element(UserHome.add_fav_book)
-
-    #     icon_xpath = "//*[@id='app']/main/div[2]/div/div/div[1]/div[2]/div/div[2]/div/div[1]/div/div/div/div[2]/i"
-    #
-    #     try:
-    #     # Check if the element is displayed and click it
-    #         icon_element = self.driver.find_element(By.XPATH, icon_xpath)
-    #         if icon_element.is_displayed():
-    #             icon_element.click()
-    #     except Exception as e:
-    #         print(f"Icon element not found or not clickable: {e}")
-    #
-    # # Click on the 'Add Book' button
-    #     WebDriverWait(self.driver, 10).until(
-    #         EC.element_to_be_clickable(UserHome.add_book)
-    #     ).click()
-    #
-    # # Click on the 'Done' button
-    #     WebDriverWait(self.driver, 10).until(
-    #     EC.element_to_be_clickable(UserHome.done_button)
-    #     ).click()
-
-
 
     def video_bookmark_button(self):
         self.click_element(UserHome.video_carousel)

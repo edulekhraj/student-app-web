@@ -1,3 +1,0 @@
-[32mINFO    [0m test_sign_in_password:test_E2E.py:24 Testcase: Sign in with Password
-[32mINFO    [0m test_search_practice:test_E2E.py:430 Test case : User searches for Practice in the search field
-[32mINFO    [0m test_search_practice:test_E2E.py:431 Test case : User attempts the Searched Practice Topic
