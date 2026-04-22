@@ -1,0 +1,20 @@
+Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(),'Submit Test')]"}
+  (Session info: chrome=147.0.7727.102); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x0000000100a0babc cxxbridge1$str$ptr + 3192864
+1   chromedriver                        0x0000000100a03a8c cxxbridge1$str$ptr + 3160048
+2   chromedriver                        0x00000001004cf7c0 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75348
+3   chromedriver                        0x0000000100517464 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369400
+4   chromedriver                        0x0000000100557448 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 631516
+5   chromedriver                        0x000000010050ce50 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 326884
+6   chromedriver                        0x00000001009c9248 cxxbridge1$str$ptr + 2920364
+7   chromedriver                        0x00000001009cca28 cxxbridge1$str$ptr + 2934668
+8   chromedriver                        0x00000001009af1fc cxxbridge1$str$ptr + 2813792
+9   chromedriver                        0x00000001009cd2a8 cxxbridge1$str$ptr + 2936844
+10  chromedriver                        0x00000001009a0024 cxxbridge1$str$ptr + 2751880
+11  chromedriver                        0x00000001009f2988 cxxbridge1$str$ptr + 3090156
+12  chromedriver                        0x00000001009f2b04 cxxbridge1$str$ptr + 3090536
+13  chromedriver                        0x0000000100a036e4 cxxbridge1$str$ptr + 3159112
+14  libsystem_pthread.dylib             0x0000000192d42f94 _pthread_start + 136
+15  libsystem_pthread.dylib             0x0000000192d3dd34 thread_start + 8
+

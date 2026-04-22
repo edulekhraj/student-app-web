@@ -74,5 +74,15 @@ def setup(request, browser):
 def log_on_failure(request):
     yield
     item = request.node
-    if item.rep_call.failed:
-        allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
+
+    rep = getattr(item, "rep_call", None)   # 👈 ADD THIS LINE
+
+    if rep and rep.failed:                 # 👈 MODIFY THIS LINE
+        driver = getattr(item, "driver", None)  # safer way
+
+        if driver:
+            allure.attach(
+                driver.get_screenshot_as_png(),
+                name="Screenshot",
+                attachment_type=AttachmentType.PNG
+            )
