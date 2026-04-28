@@ -117,7 +117,7 @@ class TestHomePage:
 
     def recommended_practice_in_full_test_summary(self):
         self.driver.find_element(*TestHomePage.test_module).click()
-        self.driver.find_element(*TestHomePage.take_chapter_test).click()
+        self.driver.find_element(*TestHomePage.take_full_test).click()
         time.sleep(3)
         self.driver.find_element(*TestHomePage.recommended_practice).click()
         time.sleep(3)
@@ -129,7 +129,7 @@ class TestHomePage:
 
     def recommended_learn_in_full_test_summary(self):
         self.driver.find_element(*TestHomePage.test_module).click()
-        self.driver.find_element(*TestHomePage.take_chapter_test).click()
+        self.driver.find_element(*TestHomePage.take_full_test).click()
         time.sleep(3)
         self.driver.find_element(*TestHomePage.recommended_learning).click()
         self.driver.find_element(*TestHomePage.recommend_video_click).click()

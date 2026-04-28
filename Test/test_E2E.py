@@ -17,7 +17,6 @@ from Utilities.utility import utility
 class TestEmbibe(utility):
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-
     def test_sign_in_password(self):
         login = signIn_up(self.driver)
         login.test_sign_in_password()
@@ -130,7 +129,7 @@ class TestEmbibe(utility):
         log.info("Testcase: Verify Cheat Sheet is present in the Author Books")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_embibe_explainers_carousel(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -140,7 +139,7 @@ class TestEmbibe(utility):
             "Testcase: Verify Embibe Explainers carousel is present in Subject filter and no issues in video player")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_trending_videos_carousel(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -149,7 +148,7 @@ class TestEmbibe(utility):
         log.info("Testcase: Verify Trending Videos carousel is present")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_enrich_your_learning_carousel(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -158,7 +157,7 @@ class TestEmbibe(utility):
         log.info("Testcase: Verify Enrich Your Learning In <Subject> carousel is present")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_books_with_videos_and_solutions_carousel(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -167,7 +166,7 @@ class TestEmbibe(utility):
         log.info("Testcase: Verify Books With Videos & Solutions - <Subject>")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_learn_chapters(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -177,7 +176,7 @@ class TestEmbibe(utility):
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.learn
-    @pytest.mark.xfail
+    @pytest.mark.learn
     def test_sub_big_books_carousel(self):
         log = self.getLogger()
         self.test_sign_in_password()
@@ -448,7 +447,6 @@ class TestEmbibe(utility):
     #     SP = SearchPage(self.driver)
     #     SP.search_questions_tab()
 
-
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.home
     def test_practice_in_revision_list(self):
@@ -502,8 +500,6 @@ class TestEmbibe(utility):
         UH = UserHome(self.driver)
         UH.practice_bookmark_question()
         log.info("Test case: User practices Bookmarked Questions")
-
-
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.profile
@@ -656,7 +652,8 @@ class TestEmbibe(utility):
         self.test_sign_in_password()
         monet = EmbibeMonetisation(self.driver)
         monet.click_doubt_resolution()
-        log.info("Test case: User clicks on Doubt Resolution Card Deeplink button present in the Simple Monetisation Page")
+        log.info(
+            "Test case: User clicks on Doubt Resolution Card Deeplink button present in the Simple Monetisation Page")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.achieve
@@ -686,7 +683,6 @@ class TestEmbibe(utility):
         achieve.start_diagnostic_test1()
         time.sleep(10)
         log.info("Test case: User attempts Diagnostic Test - 1")
-
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.achieve
@@ -726,42 +722,41 @@ class TestEmbibe(utility):
         gep.edit_goal_exam()
         log.info("Test case: Edit Goal from the Profile Screen")
 
-    # @pytest.mark.usefixtures("setup", "log_on_failure")
-    # @pytest.mark.assignments
-    # def test_recap_videos(self):
-    #     log = self.getLogger()
-    #     self.test_signIn_email()
-    #     UH = UserHome(self.driver)
-    #     UH.school_assignment_recap_videos()
-    #     log.info("Test case: User watches Recap videos from School Assignment")
-    #
-    # @pytest.mark.usefixtures("setup", "log_on_failure")
-    # @pytest.mark.assignments
-    # def test_prerequisite_videos(self):
-    #     log = self.getLogger()
-    #     self.test_signIn_email()
-    #     UH = UserHome(self.driver)
-    #     UH.school_assignment_prerequisite_videos()
-    #     log.info("Test case: User watches Prerequisites videos from School Assignment")
-    #
-    # @pytest.mark.usefixtures("setup", "log_on_failure")
-    # @pytest.mark.assignmentss
-    # def test_school_full_tests(self):
-    #     log = self.getLogger()
-    #     self.test_signIn_email()
-    #     UH = UserHome(self.driver)
-    #     UH.school_assignment_full_tests()
-    #     log.info("Test case: User attempts full Test's from School Assignment")
-    #
-    # @pytest.mark.usefixtures("setup", "log_on_failure")
-    # @pytest.mark.assignmentss
-    # def test_school_chapter_tests(self):
-    #     log = self.getLogger()
-    #     self.test_signIn_email()
-    #     UH = UserHome(self.driver)
-    #     UH.school_assignment_chapter_tests()
-    #     log.info("Test case: User attempts Chapter Test's from School Assignment")
+    @pytest.mark.usefixtures("setup", "log_on_failure")
+    @pytest.mark.assignments
+    def test_recap_videos(self):
+        log = self.getLogger()
+        self.test_signIn_email()
+        UH = UserHome(self.driver)
+        UH.school_assignment_recap_videos()
+        log.info("Test case: User watches Recap videos from School Assignment")
 
+    @pytest.mark.usefixtures("setup", "log_on_failure")
+    @pytest.mark.assignments
+    def test_prerequisite_videos(self):
+        log = self.getLogger()
+        self.test_signIn_email()
+        UH = UserHome(self.driver)
+        UH.school_assignment_prerequisite_videos()
+        log.info("Test case: User watches Prerequisites videos from School Assignment")
+
+    @pytest.mark.usefixtures("setup", "log_on_failure")
+    @pytest.mark.assignments
+    def test_school_full_tests(self):
+        log = self.getLogger()
+        self.test_signIn_email()
+        UH = UserHome(self.driver)
+        UH.school_assignment_full_tests()
+        log.info("Test case: User attempts full Test's from School Assignment")
+
+    @pytest.mark.usefixtures("setup", "log_on_failure")
+    @pytest.mark.assignments
+    def test_school_chapter_tests(self):
+        log = self.getLogger()
+        self.test_signIn_email()
+        UH = UserHome(self.driver)
+        UH.school_assignment_chapter_tests()
+        log.info("Test case: User attempts Chapter Test's from School Assignment")
 
     @pytest.mark.usefixtures("setup", "log_on_failure")
     @pytest.mark.profile
@@ -771,10 +766,3 @@ class TestEmbibe(utility):
         gep = GoalExamPage(self.driver)
         gep.hero_banner_goal_exam_selection_hin()
         log.info("Test case: User is able to select Hindi Language")
-
-
-
-
-
-
-

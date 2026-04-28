@@ -106,10 +106,10 @@ class PracticeHomePage:
                                                      "//div[@class='Title_title__og5qd']/div/div[2]/span/span/i").click()
                             time.sleep(5)
                             try:
-                                if self.driver.find_element(By.XPATH, "[status='DEFAULT']").is_displayed():
-                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").click()
+                                if self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").is_displayed():
+                                    self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").click()
                                     time.sleep(2)
-                                    self.driver.find_element(By.XPATH, "[status='DEFAULT']").send_keys("1")
+                                    self.driver.find_element(By.CSS_SELECTOR, "[status='DEFAULT']").send_keys("1")
                                     time.sleep(2)
                                     self.driver.find_element(By.XPATH, "//*[text()='Check']").click()
                                     time.sleep(10)

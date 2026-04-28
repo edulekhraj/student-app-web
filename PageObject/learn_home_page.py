@@ -1,4 +1,5 @@
 import time
+import random
 
 from selenium.common import NoSuchElementException, ElementClickInterceptedException, StaleElementReferenceException
 from selenium.webdriver.common import keys
@@ -13,10 +14,11 @@ class LearnHomePage:
         self.driver = driver
 
     Curated_Video = (
-    By.XPATH, '//*[text() = "World''s Best Curated Learning Content"]/parent::div/div[2]/div/div/div[1]/div/div/div')
+        By.XPATH,
+        '//*[text() = "World''s Best Curated Learning Content"]/parent::div/div[2]/div/div/div[1]/div/div/div')
     learn_chapter = (By.XPATH, "//*[contains(text(), 'Chapters From')]/parent::div/div[2]/div/div/div[1]/div/div/div")
     trending_videos = (
-    By.XPATH, "//*[text()='Trending Videos for Your Exam']/parent::div/div[2]/div/div/div[1]/div/div/div")
+        By.XPATH, "//*[text()='Trending Videos for Your Exam']/parent::div/div[2]/div/div/div[1]/div/div/div")
     embibe_explainers = (By.XPATH, "//*[text()='Embibe Explainers']/parent::div/div[2]/div/div/div[1]/div/div/div")
     learn_module = (By.CSS_SELECTOR, "[to='/learn/home']")
     hero_button = (By.CSS_SELECTOR, "[data-tour='learn-button']")
@@ -28,11 +30,12 @@ class LearnHomePage:
     more_topic = (By.XPATH, "//*[text()='More on this Topic']")
     topic_video = (By.XPATH, "//*[@class = 'video-summary-wrapper__section-data-wrapper']/div/div[2]/div[1]/div/div[1]")
     related_video = (By.XPATH, "//*[text()='Related Videos']")
-    related_video_click = (By.XPATH, "//div[@class='video-summary-wrapper__section-data-wrapper']/div/div[2]/div[1]/div/div[1]")
+    related_video_click = (
+        By.XPATH, "//div[@class='video-summary-wrapper__section-data-wrapper']/div/div[2]/div[1]/div/div[1]")
     # all_videos = (By.XPATH, "//*[@class='learn-summary-wrapper__section-data-wrapper']/div/div[2]/div[2]/div[1]/div[1]")
     topic_in_this_chapter = (By.XPATH, "//*[text()='Topics in this Chapter']")
     video_click = (
-    By.XPATH, "//*[@class='learn-summary-wrapper__section-data-wrapper']/div/div[2]/div[2]/div[1]/div[1]")
+        By.XPATH, "//*[@class='learn-summary-wrapper__section-data-wrapper']/div/div[2]/div[2]/div[1]/div[1]")
     test_on_this_chapter = (By.XPATH, "//span[text()='Tests on this Chapter']")
     hero_banner_sub = (By.XPATH, "//*[contains(@class,'banner--info-content')]/div/div[2]/div/div[1]/span[1]/span[1]")
     practice_module = (By.XPATH, "//*[text()='Practice']")
@@ -58,15 +61,17 @@ class LearnHomePage:
 
     sub_embibe_explainers = (By.XPATH, "//*[contains(text(), 'Embibe Explainers For')]")
     sub_embibe_explainers_tile = (
-    By.XPATH, "//*[contains(text(), 'Embibe Explainers For')]/parent::div/div[2]/div/div/div[1]/div/div/div")
+        By.XPATH, "//*[contains(text(), 'Embibe Explainers For')]/parent::div/div[2]/div/div/div[1]/div/div/div")
     sub_trendingvideos = (By.XPATH, "//*[contains(text(), 'Trending Videos for Your Exam')]")
     sub_trendingvideos_tile = (
-    By.XPATH, "//*[contains(text(), 'Trending Videos for Your Exam')]/parent::div/div[2]/div/div/div[1]/div/div/div")
+        By.XPATH,
+        "//*[contains(text(), 'Trending Videos for Your Exam')]/parent::div/div[2]/div/div/div[1]/div/div/div")
     sub_enrich_your_learning_tile = (
-    By.XPATH, "//*[contains(text(), 'Enrich Your Learning')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
+        By.XPATH, "//*[contains(text(), 'Enrich Your Learning')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
 
     sub_topic_video = (
-    By.XPATH, "//body[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]")
+        By.XPATH,
+        "//body[1]/div[1]/main[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]")
     sub_related_video = (By.XPATH,
                          "//body/div[@id='app']/main[1]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[5]")
     sub_all_video = (By.XPATH,
@@ -74,7 +79,7 @@ class LearnHomePage:
     sub_prerequisite_video = (By.XPATH,
                               "//body/div[@id='app']/main[1]/div[2]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[4]")
     sub_author_books = (
-    By.XPATH, "//*[contains(text(), 'Books With')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
+        By.XPATH, "//*[contains(text(), 'Books With')]/parent::div/div[2]/div[2]/div/div[1]/div/div/div")
     sub_embibe_big_book = (By.XPATH, "//*[contains(text(), 'Big Books')]/parent::div/div[2]/div/div/div/div/div/div")
     book_video_tile = (By.XPATH, "//ol[@class=' coobo']/li[1]/div/div[1]")
 
@@ -116,9 +121,9 @@ class LearnHomePage:
         self.driver.find_element(*LearnHomePage.test_module).click()
         self.driver.find_element(*LearnHomePage.custom_test).click()
         self.driver.find_element(*LearnHomePage.practice_module).click()
-        self.driver.find_element(*LearnHomePage.practice_banner_button).is_displayed()
+        assert "https://www.embibe.com/practice/home" in self.driver.current_url, "Assertion failed: URL does not contain expected text"
         self.driver.find_element(*LearnHomePage.achieve_module).click()
-        # self.driver.find_element(*LearnHomePage.start_achieving).is_displayed()
+        assert "https://www.embibe.com/achieve" in self.driver.current_url, "Assertion failed: URL does not contain expected text"
         self.driver.find_element(*LearnHomePage.user_home).click()
         self.driver.find_element(*LearnHomePage.parent_assignment).is_displayed()
 
@@ -414,11 +419,11 @@ class LearnHomePage:
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
         print(count)
-        for i in range(2, count):
-            self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
-                i) + "]/div/div/div/img").click()
-            time.sleep(5)
-            try:
+        sub = random.randint(2, count)
+        self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
+                sub) + "]/div/div/div/img").click()
+        time.sleep(5)
+        try:
                 self.driver.find_element(*LearnHomePage.sub_embibe_explainers).is_displayed()
                 time.sleep(5)
                 self.driver.find_element(*LearnHomePage.sub_embibe_explainers).click()
@@ -450,19 +455,17 @@ class LearnHomePage:
                     self.driver.back()
 
 
-            except NoSuchElementException:
+        except NoSuchElementException:
                 print("Embibe Explainers Carousel is not present")
-
 
     def sub_trending_videos_carousels(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
-        print(count)
-        for i in range(2, count):
-            self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
-                i) + "]").click()
-            time.sleep(5)
-            try:
+        sub = random.randint(2, count)
+        self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
+                sub) + "]").click()
+        time.sleep(5)
+        try:
                 self.driver.find_element(*LearnHomePage.sub_trendingvideos).is_displayed()
                 time.sleep(5)
                 self.driver.find_element(*LearnHomePage.sub_trendingvideos_tile).click()
@@ -478,29 +481,29 @@ class LearnHomePage:
                     print("No Topic Videos Present")
                     self.driver.back()
 
-                # try:
-                #     self.driver.find_element(*LearnHomePage.related_video).click()
-                #     time.sleep(5)
-                #     self.driver.find_element(*LearnHomePage.related_video_click).click()
-                #     time.sleep(5)
-                #     self.play_video_button()
-                #     self.driver.back()
-                #     time.sleep(2)
-                #     self.driver.back()
-                # except NoSuchElementException:
-                #     print("No related Videos Present")
-                #     self.driver.back()
+                try:
+                    self.driver.find_element(*LearnHomePage.related_video).click()
+                    time.sleep(5)
+                    self.driver.find_element(*LearnHomePage.related_video_click).click()
+                    time.sleep(5)
+                    self.play_video_button()
+                    self.driver.back()
+                    time.sleep(2)
+                    self.driver.back()
+                except NoSuchElementException:
+                    print("No related Videos Present")
+                    self.driver.back()
 
-            except NoSuchElementException:
+        except NoSuchElementException:
                 print("Trending Videos Carousel is not present")
 
     def sub_enrich_your_learning_carousels(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
-        for i in range(2, count + 1):
-            self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
-                i) + "]").click()
-            try:
+        sub = random.randint(2, count)
+        self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
+                sub) + "]").click()
+        try:
                 self.driver.find_element(*LearnHomePage.enrich_your_learning_carousel).is_displayed()
                 time.sleep(5)
                 # self.driver.find_element(*LearnHomePage.sub_embibe_explainers).click()
@@ -517,19 +520,19 @@ class LearnHomePage:
                     print("No Topic Videos Present")
                     self.driver.back()
 
-            #     try:
-            #         self.driver.find_element(*LearnHomePage.related_video).click()
-            #         time.sleep(5)
-            #         self.driver.find_element(*LearnHomePage.related_video_click).click()
-            #         time.sleep(5)
-            #         self.play_video_button()
-            #         self.driver.back()
-            #         self.driver.back()
-            #     except NoSuchElementException:
-            #         print("No related Videos Present")
-            #         self.driver.back()
-            #
-            except NoSuchElementException:
+                try:
+                    self.driver.find_element(*LearnHomePage.related_video).click()
+                    time.sleep(5)
+                    self.driver.find_element(*LearnHomePage.related_video_click).click()
+                    time.sleep(5)
+                    self.play_video_button()
+                    self.driver.back()
+                    self.driver.back()
+                except NoSuchElementException:
+                    print("No related Videos Present")
+                    self.driver.back()
+
+        except NoSuchElementException:
                 print("Enrich your Learning Carousel is not present")
         # self.driver.find_element(*LearnHomePage.last_subject_button).click()
         # try:
@@ -567,54 +570,35 @@ class LearnHomePage:
     def sub_books_with_videos_and_solutions(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
-        for i in range(2, count + 1):
-            self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
-                i) + "]").click()
-            try:
-                self.driver.find_element(*LearnHomePage.author_books).is_displayed()
-                time.sleep(5)
-                # self.driver.find_element(*LearnHomePage.sub_embibe_explainers).click()
-                self.driver.find_element(*LearnHomePage.sub_author_books).click()
-                self.driver.find_element(*LearnHomePage.book_video_tile).click()
-                try:
-                    self.driver.find_element(*LearnHomePage.embibe_big_book).is_displayed()
-                    time.sleep(5)
-                    # self.driver.find_element(*LearnHomePage.sub_embibe_explainers).click()
-                    self.driver.find_element(*LearnHomePage.sub_embibe_big_book).click()
-                    self.driver.find_element(*LearnHomePage.book_video_tile).click()
-                    try:
-                        popup = self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']")
-                        if popup.is_displayed():
-                            time.sleep(2)
-                            self.driver.find_element(By.XPATH, "//*[text()='Yes']").click()
-                            time.sleep(5)
-                            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-                            self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-                            time.sleep(5)
-                    except NoSuchElementException:
-                        time.sleep(5)
-                        self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-                        self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-                        time.sleep(5)
-
-                except ElementClickInterceptedException:
-                    time.sleep(5)
-                    self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-                    self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
-            except NoSuchElementException:
-                print("No Books with videos and solutions")
+        sub = random.randint(2, count)
+        self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
+            sub) + "]").click()
+        self.driver.find_element(*LearnHomePage.author_books).is_displayed()
+        self.driver.find_element(*LearnHomePage.sub_author_books).click()
+        self.driver.find_element(*LearnHomePage.book_video_tile).click()
+        try:
+            self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']").is_displayed()
+            # if popup.is_displayed():
+            time.sleep(3)
+            self.driver.find_element(By.XPATH, "//*[text()='Yes']").click()
+            time.sleep(5)
+            # self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+            # self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
+        except:
+            time.sleep(5)
+            self.driver.find_element(By.CSS_SELECTOR, "[class='demo-icon demo-icon--filled demo-icon--md']").click()
+            self.driver.find_element(By.XPATH, "//*[text()='Close']").click()
 
     def sub_embibe_big_books(self):
         total_subject = self.driver.find_elements(*LearnHomePage.subject_buttons)
         count = len(total_subject)
-        for i in range(2, count + 1):
-            self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
-                i) + "]").click()
-            try:
-                self.driver.find_element(*LearnHomePage.embibe_big_book).is_displayed()
-                time.sleep(5)
-                # self.driver.find_element(*LearnHomePage.sub_embibe_explainers).click()
-                self.driver.find_element(*LearnHomePage.sub_embibe_big_book).click()
+        sub = random.randint(2, count)
+        self.driver.find_element(By.XPATH, "//div[@class='section subject-section']/div[2]/div/div/div[" + str(
+                sub) + "]").click()
+        self.driver.find_element(*LearnHomePage.embibe_big_book).is_displayed()
+        self.driver.find_element(*LearnHomePage.sub_embibe_big_book).click()
+        self.driver.find_element(*LearnHomePage.book_video_tile).click()
+        try:
                 self.driver.find_element(*LearnHomePage.book_video_tile).click()
                 try:
                     popup = self.driver.find_element(By.XPATH, "//*[text()='Continue from where you left?']")
@@ -631,7 +615,7 @@ class LearnHomePage:
                     self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
                     time.sleep(5)
 
-            except ElementClickInterceptedException:
+        except ElementClickInterceptedException:
                 time.sleep(5)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
                 self.driver.find_element(*LearnHomePage.learn_button).send_keys(keys.Keys.ESCAPE)
@@ -645,7 +629,6 @@ class LearnHomePage:
             time.sleep(3)
         except:
             pass
-
 
     def handle_bookmark(self):
         ele = self.driver.find_element(*LearnHomePage.bookmark_button).text

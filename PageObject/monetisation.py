@@ -9,8 +9,6 @@ from Utilities.utility import utility
 
 
 class EmbibeMonetisation:
-
-
     achieve_sprint = (By.XPATH, '//div[@order=1]/div[4]')
 
     achieve_unlimited = (By.XPATH, '//div[@order=2]/div[4]')
@@ -72,7 +70,6 @@ class EmbibeMonetisation:
         # Assertion
         assert razor_pay_price_numeric == checkout_price_numeric, "Checkout price mismatch in Razorpay"
 
-
     def achieve_sprint_plan(self):
         time.sleep(3)
         self.driver.get(self.url)
@@ -94,7 +91,6 @@ class EmbibeMonetisation:
         checkout_price_numeric = self.clean_price(checkout_price)
         # Assertion
         assert razor_pay_price_numeric == checkout_price_numeric, "Checkout price mismatch in Razorpay"
-
 
     def achieve_unlimited_plan(self):
         time.sleep(3)
@@ -119,15 +115,13 @@ class EmbibeMonetisation:
         # Assertion
         assert razor_pay_price_numeric == checkout_price_numeric, "Checkout price mismatch in Razorpay"
 
-
     def click_live_class_button(self):
         time.sleep(3)
         self.driver.get(self.url)
         self.wait_for_visibility(EmbibeMonetisation.try_live_class).click()
-        windows=self.driver.window_handles
+        windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
-        self.wait_for_visibility((By.ID,'embibe-live-classes')).is_displayed()
-        
+        self.wait_for_visibility((By.ID, 'embibe-live-classes')).is_displayed()
 
     def click_lens_button(self):
         self.driver.get(self.url)
@@ -135,8 +129,6 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         # self.wait_for_visibility((By.XPATH, "//*[contains(@src,'/EmbibeLens/embiLens.png')]")).is_displayed()
-        
-
 
     def click_plantale_button(self):
         self.driver.get(self.url)
@@ -144,7 +136,7 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         # self.wait_for_visibility((By.XPATH, "//div[@id='content-container']/div[1]")).is_displayed()
-        
+
         #
 
     def click_brainapse_button(self):
@@ -153,7 +145,6 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         # self.wait_for_visibility((By.XPATH, "//div[@id='content-container']/div[1]")).is_displayed()
-        
 
     def click_froggipedia_button(self):
         self.driver.get(self.url)
@@ -161,15 +152,14 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         # self.wait_for_visibility((By.XPATH, "//div[@id='content-container']/div[1]")).is_displayed()
-        
 
     def click_learn_button(self):
         self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_learn).click()
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
-        self.wait_for_visibility((By.XPATH, "//button[contains(@class,'eds-btn eds-btn--primary eds-btn--capsular eds-btn--md')]")).is_displayed()
-        
+        self.wait_for_visibility((By.XPATH,
+                                  "//button[contains(@class,'eds-btn eds-btn--primary eds-btn--capsular eds-btn--md')]")).is_displayed()
 
     def click_achieve_button(self):
         self.driver.get(self.url)
@@ -177,13 +167,11 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         self.wait_for_visibility((By.XPATH, "//a[@href='/achieve/landing']")).is_displayed()
-        
 
     def click_practice_button(self):
         self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_practice).click()
         # windows = self.driver.window_handles
-        
 
     def click_test_button(self):
         self.driver.get(self.url)
@@ -192,7 +180,6 @@ class EmbibeMonetisation:
         self.driver.switch_to.window(windows[1])
         assert self.driver.current_url == 'https://www.embibe.com/test/home'
         # self.wait_for_visibility((By.XPATH, "//button[@class='eds-btn eds-btn--primary eds-btn--capsular eds-btn--md']")).is_displayed()
-        
 
     def click_revision_list_button(self):
         self.driver.get(self.url)
@@ -200,7 +187,6 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         self.wait_for_visibility((By.XPATH, "//span[text()='Questions To Revise']")).is_displayed()
-        
 
     def click_parent_app_button(self):
         self.driver.get(self.url)
@@ -208,17 +194,8 @@ class EmbibeMonetisation:
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         # self.wait_for_visibility((By.XPATH, "//div[@class='download-btn-section ev_down_btn']/a[1]")).is_displayed()
-        
 
     def click_doubt_resolution(self):
         self.driver.get(self.url)
         self.driver.find_element(*EmbibeMonetisation.try_doubt_resolution).click()
         time.sleep(3)
-
-
-
-
-
-
-
-

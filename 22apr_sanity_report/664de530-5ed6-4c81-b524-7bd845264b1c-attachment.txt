@@ -1,3 +1,0 @@
-[32mINFO    [0m test_sign_in_password:test_E2E.py:25 Testcase: Sign in with Password
-[32mINFO    [0m test_learn_select_chapter_topics_in_author_books:test_E2E.py:120 Testcase: Verify User is able to select Chapters in the Author Books
-[32mINFO    [0m test_learn_select_chapter_topics_in_author_books:test_E2E.py:121 Testcase: Verify User is able to select Topics in the Author Books

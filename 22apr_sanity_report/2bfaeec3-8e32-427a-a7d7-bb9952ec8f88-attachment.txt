@@ -1,3 +1,0 @@
-[32mINFO    [0m test_sign_in_password:test_E2E.py:25 Testcase: Sign in with Password
-[32mINFO    [0m test_practice_embibe_big_books:test_E2E.py:373 Test case: Click on the Big Books
-[32mINFO    [0m test_practice_embibe_big_books:test_E2E.py:374 Test case: Clicking on the Practice Tile present in the Book TOC
